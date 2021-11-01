@@ -10,7 +10,7 @@ router.post('/register', async (req, res) => {
 
     //validate user
     const { error } = registerValidation(req.body); //Vi plockar ut error objektet ur validation (de/con)structur'ing)
-   
+   console.log(error);
     if (error) {
         return res.status(400).json({ error });
     }
