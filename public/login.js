@@ -8,8 +8,8 @@ loginForm.addEventListener('submit', eventListnObj => {     // Starta en process
         email: login.value,
         password: password.value
     };
-    //console.log('loginObject: ', loginObject);
-    //console.log('JSON.stringify(loginObject): ', JSON.stringify(loginObject));
+
+    console.log('JSON.stringify(loginObject): ', JSON.stringify(loginObject));
 
     fetch('/api/user/login', {                              //fetch( varifrån?, hur? ): Å se'n då?
         method: 'POST',
