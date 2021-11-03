@@ -54,9 +54,8 @@ router.post('/login', async (req, res) => {
         return res.status(400).json({ error: 'Email not found' });
     }
 
-    const validPassword = await bcrypt.compare(req.body.password, User.password);
-    console.log();
-    if (!validPassword) {
+    const validPassword = await bcrypt.compare(req.body.password, user.password);
+        if (!validPassword) {
         return res.status(400).json({ error: 'Invalid password' });
     }
 

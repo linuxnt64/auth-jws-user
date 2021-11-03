@@ -4,10 +4,10 @@ const formLogin = document.querySelector('#newName');
 const formEmail = document.querySelector('#newEmail');
 const formPassword = document.querySelector('#newPassword');
 
-multiForm.addEventListener('create', eventListnObj => {     // Starta en process som reagerar på knappen /create/ i HTML'n
+multiForm.addEventListener('submit', eventListnObj => {     // Starta en process som reagerar på knappen /create/ i HTML'n
     eventListnObj.preventDefault();
     const newUserObject = {                                    // Skapa ett objekt att ta mot data från 'endpointen' i nästa steg
-        login: formLogin.value,
+        name: formLogin.value,
         email: formEmail.value,
         password: formPassword.value
     };
@@ -23,7 +23,7 @@ multiForm.addEventListener('create', eventListnObj => {     // Starta en process
 
         .then(response => {                                 // Den data som kom in via endpoint '/api/user/login' är kontrollerad och ett resultat finns att jobba med
             console.log("response: ", response);
-            alert(`Användare ${login} är nu skapad, med ${email} som ID`);
+            alert(`Användare ${response.login} är nu skapad, med ${response.email} som ID`);
         });
 
 });
