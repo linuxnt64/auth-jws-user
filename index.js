@@ -7,8 +7,8 @@ dotenv.config();                        // En metod , skapar en instans av doten
 const PORT = process.env.PORT;
 
 const pages = require('./routes/pages.js')
-const authRoute = require(('./routes/auth.js'))
-const secureRoute = require(('./routes/secure.js'))
+const authRoute = require('./routes/auth.js')
+const secureRoute = require('./routes/secure.js')
 
 mongoose.connect(process.env.DB_CONNECT, {useUnifiedTopology:true, useNewURLparser: true}, () => {
     console.log('Connected to DB');
