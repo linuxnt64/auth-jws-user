@@ -23,7 +23,7 @@ multiForm.addEventListener('submit', eventListnObj => {     // Starta en process
 
         .then(response => {                                 // Den data som kom in via endpoint '/api/user/login' är kontrollerad och ett resultat finns att jobba med
             console.log("response: ", response);
-            alert(`Användare ${response.login} är nu skapad, med ${response.email} som ID`);
+            alert(`Användare ${newUserObject.name} är nu skapad, med ${newUserObject.email} som ID`);
         });
 
 });
