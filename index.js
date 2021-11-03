@@ -11,7 +11,7 @@ const authRoute = require('./routes/auth.js')
 const secureRoute = require('./routes/secure.js')
 
 mongoose.connect(process.env.DB_CONNECT, {useUnifiedTopology:true, useNewURLparser: true}, () => {
-    console.log('Connected to DB');
+    console.log('Connected to mongoDB');
 });
 app.use(express.json());
 app.use('/api/user', authRoute); // logga in och sign up user

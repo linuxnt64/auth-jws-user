@@ -10,14 +10,12 @@ router.post('/register', async (req, res) => {
 
     //validate user
     const { error } = registerValidation(req.body); //Vi plockar ut error objektet ur validation (de/con)structur'ing)
-   console.log(error);
     if (error) {
         return res.status(400).json({ error });
     }
 
     //if ok (existing user)
     const emailExists = await User.findOne({ email: req.body.email });
-
     if (emailExists) {
         return res.status(400).json({ error: 'Email already exists' });
     }
@@ -44,7 +42,7 @@ router.post('/register', async (req, res) => {
 
 
 router.post('/login', async (req, res) => {
-    console.log(req.body);
+    
     //validate user
     const { error } = loginValidation(req.body);
     if (error) {
@@ -57,6 +55,7 @@ router.post('/login', async (req, res) => {
     }
 
     const validPassword = await bcrypt.compare(req.body.password, User.password);
+    console.log();
     if (!validPassword) {
         return res.status(400).json({ error: 'Invalid password' });
     }

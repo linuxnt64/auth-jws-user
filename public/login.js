@@ -20,7 +20,7 @@ loginForm.addEventListener('submit', eventListnObj => {     // Starta en process
 
         .then(response => {                                 // Den data som kom in via endpoint '/api/user/login' är kontrollerad och ett resultat finns att jobba med
             console.log("response: ",response);
-            localStorage.setItem('token', response.token);   // Skapar typ en cookie 
+            localStorage.setItem('token', response.token);  // Skapar typ en cookie i lokala webläsarens storage
             location.href = response.redirect;
         });
 });
