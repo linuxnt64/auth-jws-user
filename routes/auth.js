@@ -49,6 +49,7 @@ router.post('/login', async (req, res) => {
     const { error } = loginValidation(req.body);
     if (error) {
         res.status(400).json({ error: error.details[0].message });
+        console.log(error.details[0].message);
     }
 
     const user = await User.findOne({ email: req.body.email });
