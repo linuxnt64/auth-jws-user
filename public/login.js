@@ -11,7 +11,7 @@ loginForm.addEventListener('submit', eventListnObj => {     // Starta en process
 
     console.log('JSON.stringify(loginObject): ', JSON.stringify(loginObject));
 
-    fetch('/api/user/login', {                              //fetch( varifrån?, hur? ): Å se'n då?
+    fetch('/api/user/login', {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(loginObject)                   // Sätter citationstecken runt alla strängar i objektet
